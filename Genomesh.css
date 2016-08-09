@@ -1,0 +1,54 @@
+html {
+    background-color: lightgrey;
+}
+
+body {
+    margin: auto;
+    padding: 2em 2em 2em;
+    max-width: 800px;
+    background-color: #f2f2f2;
+}
+
+p {
+	font-size: 20px;
+    color:black;
+    font-family: helvetica
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:black;
+    font-family:helvetica;
+}
+a {
+    color: orange
+}
+a:hover {
+    text-decoration: none;
+}
+table {
+    text-align: center;
+    font-size: 35px;
+    font-family:monospace
+}
+
+.roofbox {
+    border: 5px solid black;
+    height: 150px;
+    width:150px;
+    align-self: center;
+	background-color: black
+}
+#display {
+    border: 5px solid black;
+    height: 150px;
+    width:800px;
+    align-self: center;
+    background: gray
+}
+button {
+    width: inherit;
+    border-width: medium;
+    height: inherit;
+    font-size: 40px;
+	background-color: orange
+}
