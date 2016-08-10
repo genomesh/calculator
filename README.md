@@ -6,4 +6,6 @@ The main purpose of this project is to:
 - Divide numbers
 - Multiply numbers
 
+And that is about it.
+
 
