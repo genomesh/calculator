@@ -1,94 +1,64 @@
-var FunctionInUse = "false";
-var NumOne = 0;
-var NumTwo = 0;
-function add(num1, num2) {
-    "use strict";
-    return num1 + num2;
+
+"use strict";
+
+function bufferToAccumlator(aVal, bVal) {
+    return bVal;
 }
-function sub(num1, num2) {
-    "use strict";
-    return (num1 - num2);
+function add(aVal, bVal) {
+    return aVal + bVal;
 }
-function multiply(num1, num2) {
-    "use strict";
-    return num1 * num2;
+function sub(aVal, bVal) {
+    return (aVal - bVal);
 }
-function divide(num1, num2) {
-    "use strict";
-    return num1 / num2;
+function multiply(aVal, bVal) {
+    return aVal * bVal;
 }
-function modu(num1, num2) {
-    "use strict";
-    return num1 % num2;
+function divide(aVal, bVal) {
+    return aVal / bVal;
 }
-function myClear() {
-    "use strict";
-    FunctionInUse = "false";
-    NumOne = 0;
-    NumTwo = 0;
-    document.getElementById("display").innerHTML = 0;
+function modu(aVal, bVal) {
+    return aVal % bVal;
 }
-function IntPressed(Button) {
-    "use strict";
-    if (FunctionInUse === "false") {
-        NumOne = NumOne * 10 + Button;
-        document.getElementById("display").innerHTML = NumOne;
-    } else {
-        NumTwo = NumTwo * 10 + Button;
-        document.getElementById("display").innerHTML = NumTwo;
-    }
-    return "Done";
+function noOp(aVal, bVal) {
+    return 0;
 }
-function operatorPressed(Operator) {
-    "use strict";
-    if (FunctionInUse !== "false") {
-        switch (FunctionInUse) {
-        case "Add":
-            NumOne = add(NumOne, NumTwo);
-            break;
-        case "Sub":
-            NumOne = sub(NumOne, NumTwo);
-            break;
-        case "Mult":
-            NumOne = multiply(NumOne, NumTwo);
-            break;
-        case "Div":
-            NumOne = divide(NumOne, NumTwo);
-            break;
-        case "Mod":
-            NumOne = modu(NumOne, NumTwo);
-            break;
-        }
-        NumTwo = 0;
-        document.getElementById("display").innerHTML = NumOne;
-        FunctionInUse = Operator;
-        if (Operator === "=") {
-            FunctionInUse = "false";
-        }
-    } else {
-        if (Operator === "=") {
-            document.getElementById("display").innerHTML = NumOne;
-        } else {
-            FunctionInUse = Operator;
-        }
-    }
-    return ("Done");
+
+const operatorFunctions = {
+    'Add': add,
+    'Sub': sub,
+    'Mult': multiply,
+    'Div': divide,
+    'Mod': modu,
+    '=': noOp
+};
+
+var accumlator=0;
+var buffer="";
+var applyOp=bufferToAccumlator;
+
+function onNumber(num) {
+    console.log('num', num);
+    buffer+=num;
+    display(parseFloat(buffer));
 }
-function OpToJava(Raw) {
-    "use strict";
-    switch (Raw) {
-    case 1:
-        return (operatorPressed("Mult"));
-    case 2:
-        return (operatorPressed("Div"));
-    case 3:
-        return (operatorPressed("Add"));
-    case 4:
-        return (operatorPressed("Sub"));
-    case 5:
-        return (operatorPressed("Mod"));
-    case 6:
-        return (operatorPressed("="));
-    
-    }
+function onOperator(op) {
+    console.log('op', op);
+    var bufferVal=parseFloat(buffer);
+    accumlator=applyOp(accumlator, bufferVal);
+    buffer="";
+    applyOp=operatorFunctions[op];
+    display(accumlator);
 }
+function onClear() {
+    accumlator=0;
+    buffer="";
+    applyOp=bufferToAccumlator;
+    display(0)
+}
+function display(num) {
+    document.getElementById("display").innerHTML = num;
+}
+
+onClear();
+
+

@@ -9,32 +9,32 @@
         <table>
          <tbody>
           <tr>
-              <td colspan = 3 id = "display"></td>
-            <td class = "roofbox"><button type = "button" onclick = "OpToJava(2)">&divide;</button></td>
+            <td colspan = 3 id = "display"></td>
+            <td class = "roofbox"><button type = "button" onclick = "onOperator('Div')">&divide;</button></td>
           </tr>
           <tr>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(7)">7</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(8)">8</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(9)">9</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "OpToJava(1)">&times;</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(7)">7</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(8)">8</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(9)">9</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onOperator('Mult')">&times;</button></td>
           </tr>
           <tr>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(4)">4</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(5)">5</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(6)">6</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "OpToJava(4)">-</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(4)">4</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(5)">5</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(6)">6</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onOperator('Sub')">-</button></td>
           </tr>
           <tr>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(1)">1</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(2)">2</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(3)">3</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "OpToJava(3)">+</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(1)">1</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(2)">2</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(3)">3</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onOperator('Add')">+</button></td>
           </tr>
             <tr>
-            <td class = "roofbox"><button type = "button" onclick = "IntPressed(0)">0</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "OpToJava(5)">Mod</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "myClear()">Clear</button></td>
-            <td class = "roofbox"><button type = "button" onclick = "OpToJava(6)">=</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onNumber(0)">0</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onOperator('Mod')">Mod</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onClear()">Clear</button></td>
+            <td class = "roofbox"><button type = "button" onclick = "onOperator('=')">=</button></td>
           </tr>
          </tbody>
         </table>
